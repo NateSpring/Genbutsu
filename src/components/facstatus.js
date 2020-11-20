@@ -45,6 +45,9 @@ const FacStatus = () => {
 
 
     useEffect(() => {
+        //NEED INITIAL EMIT IN HERE!!!!!
+        // socket.emit('incoming status', index)
+
         socket.on('outgoing status', function (data) {
             setStatus(departments.map(dept =>
                 dept.id === data ? { ...dept, status: 'waiting' } : dept
