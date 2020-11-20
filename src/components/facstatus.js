@@ -33,11 +33,8 @@ const FacStatus = () => {
         ))
     }
     const statusWaiting = index => (e) => {
-        socket.on('incoming status', function (data) {
-            setStatus(departments.map(dept =>
-                dept.id === index ? { ...dept, status: 'waiting' } : dept
-            ))
-        })
+        socket.emit('incoming status', index)
+        //Object data up in here to be passed around
     }
     const statusIdle = index => (e) => {
         setStatus(departments.map(dept =>
@@ -48,12 +45,14 @@ const FacStatus = () => {
 
 
     useEffect(() => {
-        console.log("I HAVE MOUNTED");
-        const socket = socketIOClient('http://192.168.1.222:5000');
-        socket.emit('outgoing status');
-
-
+        socket.on('outgoing status', function (data) {
+            setStatus(departments.map(dept =>
+                dept.id === data ? { ...dept, status: 'waiting' } : dept
+            ))
+            console.log('FacStatus: outgoing', data)
+        });
     })
+
     return (
         <div className="app-container">
             <p className="page-title">Facility View</p>
