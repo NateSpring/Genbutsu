@@ -27,9 +27,10 @@ io.on("connection", socket => {
     console.log("New User Connected");
 
     //Listen for emission of changing data//
-    socket.on("incoming status", (status) => {
+    socket.on("incoming status", (data) => {
         //Broadcast to other sockets//
-        socket.emit("outgoing status", status);
+        socket.emit("outgoing status", data);
+        console.log('INCOMING FIRED', data)
     });
 
     //Log when user disconnects//
