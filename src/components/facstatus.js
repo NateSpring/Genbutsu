@@ -22,21 +22,27 @@ const FacStatus = () => {
     ]
     );
 
+    
     const statusOnSchedule = index => (e) => {
+        socket.emit('incoming status', { index: index, status: 'on-schedule' })
         setStatus(departments.map(dept =>
             dept.id === index ? { ...dept, status: 'on-schedule' } : dept
         ))
     }
     const statusBehind = index => (e) => {
+        socket.emit('incoming status', { index: index, status: 'behind' })
         setStatus(departments.map(dept =>
             dept.id === index ? { ...dept, status: 'behind' } : dept
         ))
     }
     const statusWaiting = index => (e) => {
-        socket.emit('incoming status', index)
-        //Object data up in here to be passed around
+        socket.emit('incoming status', { index: index, status: 'waiting' })
+        setStatus(departments.map(dept =>
+            dept.id === index ? { ...dept, status: 'waiting' } : dept
+        ))
     }
     const statusIdle = index => (e) => {
+        socket.emit('incoming status', { index: index, status: 'idle' })
         setStatus(departments.map(dept =>
             dept.id === index ? { ...dept, status: 'idle' } : dept
         ))
@@ -46,16 +52,15 @@ const FacStatus = () => {
 
     useEffect(() => {
         //NEED INITIAL EMIT IN HERE!!!!!
-        // socket.emit('incoming status', index)
+        //socket.emit('incoming status')
 
         socket.on('outgoing status', function (data) {
             setStatus(departments.map(dept =>
-                dept.id === data ? { ...dept, status: 'waiting' } : dept
+                dept.id === data.index ? { ...dept, status: data.status } : dept
             ))
-            console.log('FacStatus: outgoing', data)
         });
     })
-
+    
     return (
         <div className="app-container">
             <p className="page-title">Facility View</p>
