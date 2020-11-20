@@ -6,7 +6,7 @@ import socketIOClient from 'socket.io-client';
 
 const FacStatus = () => {
 
-    const socket = socketIOClient('http://192.168.1.222:5000');
+    const socket = socketIOClient('http://localhost:5000');
 
     const [departments, setStatus] = useState([
         { id: 0, name: 'S', status: 'idle' },
@@ -22,30 +22,21 @@ const FacStatus = () => {
     ]
     );
 
-    
     const statusOnSchedule = index => (e) => {
         socket.emit('incoming status', { index: index, status: 'on-schedule' })
-        setStatus(departments.map(dept =>
-            dept.id === index ? { ...dept, status: 'on-schedule' } : dept
-        ))
+
     }
     const statusBehind = index => (e) => {
         socket.emit('incoming status', { index: index, status: 'behind' })
-        setStatus(departments.map(dept =>
-            dept.id === index ? { ...dept, status: 'behind' } : dept
-        ))
+
     }
     const statusWaiting = index => (e) => {
         socket.emit('incoming status', { index: index, status: 'waiting' })
-        setStatus(departments.map(dept =>
-            dept.id === index ? { ...dept, status: 'waiting' } : dept
-        ))
+
     }
     const statusIdle = index => (e) => {
         socket.emit('incoming status', { index: index, status: 'idle' })
-        setStatus(departments.map(dept =>
-            dept.id === index ? { ...dept, status: 'idle' } : dept
-        ))
+
     }
 
 
@@ -60,7 +51,7 @@ const FacStatus = () => {
             ))
         });
     })
-    
+
     return (
         <div className="app-container">
             <p className="page-title">Facility View</p>
