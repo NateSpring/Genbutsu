@@ -29,7 +29,7 @@ io.on("connection", socket => {
     //Listen for emission of changing data//
     socket.on("incoming status", (data) => {
         //Broadcast to other sockets//
-        socket.emit("outgoing status", data);
+        socket.broadcast.emit("outgoing status", data);
         console.log('INCOMING FIRED', data)
     });
 
@@ -122,4 +122,5 @@ server.listen(port, () => console.log(`Server Ready on Port: ${port}`));
 
 
 // app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
+
 
