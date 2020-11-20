@@ -1,0 +1,200 @@
+/* Basic Style Sheet for Genbutsu */
+
+/* Element Classes */
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  letter-spacing: 0.2em;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* App Classes */
+
+main {
+  text-align: center;
+}
+
+.app-title {
+  width: 100%;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #242424;
+  color: #4a4a4a;
+  margin: auto;
+}
+
+.app-view, .page-title {
+  width: 100%;
+  margin: auto;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+/* Large Dept. Tile Classes */
+
+.dept-tile-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.dept-tile {
+  background-color: #4a4a4a;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  width: 10%;
+  height: 40vh;
+}
+
+.devisit {
+  text-decoration: none;
+}
+
+.dept-title:visited, .dept-tile:visited, .devisit:visited, .dept-tile {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dept-tile .dept-title {
+  width: 100%;
+  opacity: 0.5;
+  font-size: 4em;
+}
+
+/* Dept Page Classes */
+
+.dept-page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.dept-page-title {
+  width: 100%;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #242424;
+  color: #fff;
+  margin: auto;
+  padding: 0px 40px;
+}
+
+/* Facility Feed Classes */
+
+.facility-info-feed {
+  width: 30%;
+  height: 550px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.fif-container {
+  overflow-y: scroll;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.fif-post {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-style: solid;
+  border-color: #242424;
+  border-width: 0px 0px 1px 0px;
+}
+
+.fif-post h5 {
+  margin-bottom: 5px;
+  padding: 3px 0px;
+  border-style: solid;
+  border-color: #242424;
+  border-width: 0px 0px 1px 0px;
+}
+
+/* Goals Section Classes */
+
+.App-Footer {
+  display: flex;
+  flex-direction: row;
+}
+
+.goals-container {
+  width: 67%;
+  height: 550px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.goals-container h1 {
+  width: 100%;
+}
+
+.goal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.goal h1 {
+  margin: auto;
+  font-size: 5em;
+}
+
+/* Status Indicator Classes */
+
+.on-schedule {
+  background-color: #4a850c;
+}
+
+.behind {
+  background-color: #d99f00;
+}
+
+.waiting {
+  background-color: #c91610;
+}
+
+.idle {
+  background-color: #027bd1;
+}
+
+/* Status Button Classes */
+
+.status-buttons button {
+  width: 100%;
+}
