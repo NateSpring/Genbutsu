@@ -29,7 +29,7 @@ io.on("connection", socket => {
     //Listen for emission of changing data//
     socket.on("incoming status", (data) => {
         //Broadcast to other sockets//
-        socket.broadcast.emit("outgoing status", data);
+        io.sockets.emit("outgoing status", data);
         console.log('INCOMING FIRED', data)
     });
 
