@@ -87,6 +87,10 @@ main {
   font-size: 4em;
 }
 
+.dept-wrapper>* {
+  width: 100%;
+}
+
 /* Dept Page Classes */
 
 .dept-page-header {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { statusOnSchedule, statusBehind, statusWaiting, statusIdle } from '../../utils';
 
 const PressBrake = () => {
     return (
@@ -15,6 +16,13 @@ const PressBrake = () => {
                 <div className="dept-tile">
                     <h3>Cell 3</h3>
                 </div>
+            </div>
+            <h3>Current Status</h3>
+            <div>
+                <button onClick={statusOnSchedule(3)}>On Schedule</button>
+                <button onClick={statusBehind(3)}>Behind</button>
+                <button onClick={statusWaiting(3)}>Waiting</button>
+                <button onClick={statusIdle(3)}>Idle</button>
             </div>
         </div>
     )

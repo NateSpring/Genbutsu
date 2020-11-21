@@ -1,4 +1,5 @@
 import React from 'react';
+import { statusOnSchedule, statusBehind, statusWaiting, statusIdle } from '../../utils';
 
 const TubeFab = () => {
     return (
@@ -15,6 +16,13 @@ const TubeFab = () => {
                 <div className="dept-tile">
                     <h3>Cell 3</h3>
                 </div>
+            </div>
+            <h3>Current Status</h3>
+            <div>
+                <button onClick={statusOnSchedule(5)}>On Schedule</button>
+                <button onClick={statusBehind(5)}>Behind</button>
+                <button onClick={statusWaiting(5)}>Waiting</button>
+                <button onClick={statusIdle(5)}>Idle</button>
             </div>
         </div>
     )

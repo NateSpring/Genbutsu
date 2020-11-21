@@ -1,4 +1,5 @@
 import React from 'react';
+import { statusOnSchedule, statusBehind, statusWaiting, statusIdle } from '../../utils';
 
 const Nesting = () => {
     return (
@@ -14,6 +15,13 @@ const Nesting = () => {
                 <div className="dept-tile">
                     <h3>Cell 3</h3>
                 </div>
+            </div>
+            <h3>Current Status</h3>
+            <div>
+                <button onClick={statusOnSchedule(1)}>On Schedule</button>
+                <button onClick={statusBehind(1)}>Behind</button>
+                <button onClick={statusWaiting(1)}>Waiting</button>
+                <button onClick={statusIdle(1)}>Idle</button>
             </div>
         </div>
     )
