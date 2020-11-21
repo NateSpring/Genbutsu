@@ -24,13 +24,13 @@ app.use(bodyParser.json());
 
 //Socket.IO setup//
 io.on("connection", socket => {
-    console.log("New User Connected");
+    // console.log("New User Connected");
 
     //Listen for emission of changing data//
     socket.on("incoming status", (data) => {
         //Broadcast to other sockets//
         io.sockets.emit("outgoing status", data);
-        console.log('INCOMING FIRED', data)
+        console.log('INCOMING DATA:', data)
     });
 
     //Log when user disconnects//
@@ -38,21 +38,21 @@ io.on("connection", socket => {
 })
 
 //MySQL Get request and setup//
-let con = mysql.createConnection({
-    host: "192.168.1.222",
-    user: "nate",
-    password: "Ditch1234!",
-    database: "gem"
-});
-app.get('/somethingunreasonable', (req, res) => {
-    con.query('SELECT * from gem', (err, results, fields) => {
-        if (!err) {
-            res.send(results)
-        } else {
-            console.log('Error with DB Query');
-        }
-    });
-});
+// let con = mysql.createConnection({
+//     host: "192.168.1.222",
+//     user: "nate",
+//     password: "Ditch1234!",
+//     database: "gem"
+// });
+// app.get('/somethingunreasonable', (req, res) => {
+//     con.query('SELECT * from gem', (err, results, fields) => {
+//         if (!err) {
+//             res.send(results)
+//         } else {
+//             console.log('Error with DB Query');
+//         }
+//     });
+// });
 // END MySQL Stuffs//
 
 
@@ -122,5 +122,3 @@ server.listen(port, () => console.log(`Server Ready on Port: ${port}`));
 
 
 // app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
-
-
