@@ -9,10 +9,15 @@ body {
   font-weight: 400;
   font-size: 0.9em;
   letter-spacing: 0.2em;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0px;
   padding: 0px;
 }
@@ -32,7 +37,8 @@ main {
   margin: auto;
 }
 
-.app-view, .page-title {
+.app-view,
+.page-title {
   width: 100%;
   margin: auto;
 }
@@ -76,7 +82,10 @@ main {
   text-decoration: none;
 }
 
-.dept-title:visited, .dept-tile:visited, .devisit:visited, .dept-tile {
+.dept-title:visited,
+.dept-tile:visited,
+.devisit:visited,
+.dept-tile {
   color: #fff;
   text-decoration: none;
 }
@@ -85,10 +94,6 @@ main {
   width: 100%;
   opacity: 0.5;
   font-size: 4em;
-}
-
-.dept-wrapper>* {
-  width: 100%;
 }
 
 /* Dept Page Classes */

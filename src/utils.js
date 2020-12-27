@@ -3,7 +3,7 @@ import socketIOClient from 'socket.io-client';
 
 
 //Functions for emiting state through socket.io//
-const socket = socketIOClient('http://192.168.1.222:5000');
+const socket = socketIOClient('http://localhost:5000');
 
 export const statusOnSchedule = index => (e) => {
     socket.emit('incoming status', { index: index, status: 'on-schedule' })
