@@ -1,22 +1,30 @@
-import React from 'react';
-import { statusOnSchedule, statusBehind, statusWaiting, statusIdle } from '../../utils';
+import React, { useEffect, useState } from 'react';
+import socketIOClient from 'socket.io-client';
+import { statusOnSchedule, statusBehind, statusWaiting, statusIdle, getTakt } from '../../utils';
 
 const Sales = () => {
+    const socket = socketIOClient('http://192.168.1.222:5000');
+
+
+    useEffect(() => {
+    }, [])
+
+
     return (
         <div>
             <h1 className="page-title">Sales</h1>
 
             <div className="app-container">
-                <div className="dept-tile">
-                    <h3>Cell 1</h3>
+
+
+
+                <div className="cycle-times">
+
                 </div>
-                <div className="dept-tile">
-                    <h3>Cell 2</h3>
-                </div>
-                <div className="dept-tile">
-                    <h3>Cell 3</h3>
-                </div>
+
+
             </div>
+
             <h3>Current Status</h3>
             <div>
                 <button onClick={statusOnSchedule(0)}>On Schedule</button>
@@ -24,7 +32,8 @@ const Sales = () => {
                 <button onClick={statusWaiting(0)}>Waiting</button>
                 <button onClick={statusIdle(0)}>Idle</button>
             </div>
-        </div>
+
+        </div >
     )
 }
 export default Sales;

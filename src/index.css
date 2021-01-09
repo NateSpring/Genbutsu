@@ -12,12 +12,7 @@ body {
   /* overflow: hidden; */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0px;
   padding: 0px;
 }
@@ -33,12 +28,11 @@ main {
   border-style: solid;
   border-width: 0px 0px 1px 0px;
   border-color: #242424;
-  color: #4a4a4a;
+  color: #646464;
   margin: auto;
 }
 
-.app-view,
-.page-title {
+.app-view, .page-title {
   width: 100%;
   margin: auto;
 }
@@ -47,8 +41,8 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   padding: 40px;
 }
 
@@ -59,6 +53,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   text-transform: uppercase;
 }
@@ -82,10 +77,7 @@ main {
   text-decoration: none;
 }
 
-.dept-title:visited,
-.dept-tile:visited,
-.devisit:visited,
-.dept-tile {
+.dept-title:visited, .dept-tile:visited, .devisit:visited, .dept-tile {
   color: #fff;
   text-decoration: none;
 }
@@ -112,6 +104,29 @@ main {
   color: #fff;
   margin: auto;
   padding: 0px 40px;
+}
+
+.cycle-times {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cycle-times div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cycle-times table {
+  border: 1px solid #444444;
+}
+
+.cycle-times tr:nth-child(odd) {
+  background-color: #4a4a4a;
 }
 
 /* Facility Feed Classes */
